@@ -1,0 +1,11 @@
+<h1>{{ board.name }}</h1>
+{% for column in columns %}
+    <h2>{{ column.name }}</h2>
+    <ul>
+    {% for task in tasks %}
+        {% if task.column == column %}
+            <li>{{ task.name }} - {{ task.status }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endfor %}
